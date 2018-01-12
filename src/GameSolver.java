@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.Random;// for generating random numbers 
 
 /**
@@ -11,8 +10,8 @@ public class GameSolver {
 	 * guess is too small and "too large" if a guess is too large, for efficient
 	 * solution.
 	 * 
-	 * @param game
-	 *            is the NumberGame to solve
+	 * @param game is the NumberGame to solve
+	 * guess is ui's guess.
 	 * @return //TODO what does it return?
 	 */
 	public int play(NumberGame game) {
@@ -37,12 +36,12 @@ public class GameSolver {
 			}
 			System.out.println(game.getMessage());
 			if (!correct) {
-				if (game.getMessage().equals("Your answer is too small.")) {
-					guess = guess + 2;
+				if (game.getMessage().contains("small")) {
+					guess = guess + 5;
 					continue;
 				}
-				if (game.getMessage().equals("Your answer is too large.")) {
-					guess = guess - 5;
+				if (game.getMessage().contains("too large")) {
+					guess = guess - 4;
 					continue;
 				}
 			}
