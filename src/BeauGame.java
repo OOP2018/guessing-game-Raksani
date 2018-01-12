@@ -49,6 +49,7 @@ public class BeauGame extends NumberGame{
     public String toString() {
     	return "Guess a secret number between 1 and "+upperBound;
     }
+	
 	@Override
 	public int getCount(){
 		return getGuess;

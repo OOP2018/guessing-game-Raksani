@@ -10,7 +10,7 @@ public class GameConsole {
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		int guess;
-		// describe the game.
+		// user guess the secret number (more than 1)
 		System.out.println(game.toString());
 		/*
 		 * use a loop to print a message from the game and ask the user to input
