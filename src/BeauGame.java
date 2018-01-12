@@ -1,7 +1,8 @@
 import java.util.Random;// for generating random numbers 
 /*
  *  Game of guessing a secret number.
- *  @Beau
+ *  
+ *  @author Raksani Khunamas
 */
 
 public class BeauGame extends NumberGame {

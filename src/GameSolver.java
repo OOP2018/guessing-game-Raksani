@@ -36,7 +36,7 @@ public class GameSolver {
 			}
 			System.out.println(game.getMessage());
 			if (!correct) {
-				if (game.getMessage().contains("small")) {
+				if (game.getMessage().contains("too small")) {
 					guess = guess + 5;
 					continue;
 				}
