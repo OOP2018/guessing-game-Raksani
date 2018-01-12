@@ -10,8 +10,8 @@ public class GameSolver {
 	 * guess is too small and "too large" if a guess is too large, for efficient
 	 * solution.
 	 * 
-	 * @param game is the NumberGame to solve
-	 * guess is ui's guess.
+	 * @param game
+	 *            is the NumberGame to solve guess is ui's guess.
 	 * @return //TODO what does it return?
 	 */
 	public int play(NumberGame game) {
@@ -25,7 +25,7 @@ public class GameSolver {
 		System.out.println(game.getMessage());
 		Random rand = new Random();
 		guess = rand.nextInt(game.getUpperBound()) + 1;
-		//int fixguess = guess;
+		// int fixguess = guess;
 		while (true) {
 			System.out.print("Your answer? ");
 			System.out.println(guess);
