@@ -42,7 +42,7 @@ public class GameSolver {
 					continue;
 				}
 				if (game.getMessage().equals("Your answer is too large.")) {
-					guess = guess - 3;
+					guess = guess - 5;
 					continue;
 				}
 			}
