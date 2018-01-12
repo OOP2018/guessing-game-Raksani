@@ -17,7 +17,7 @@ public class BeauGame extends NumberGame{
 		Random rand = new Random();
 		this.secret = rand.nextInt(upperBound) + 1;
 		String Upperbound = upperBound+"";
-		super.setMessage("I'm thinking of a number between 1 and "+Upperbound);
+		//super.setMessage("I'm thinking of a number between 1 and "+Upperbound);
 	}
 	
 	@Override
