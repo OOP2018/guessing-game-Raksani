@@ -9,6 +9,7 @@ public class BeauGame extends NumberGame{
 	private int upperBound;
 	//solution.
     private int secret;
+    private int getGuess;
 
 	public BeauGame(int upperBound){
 		// set the upperbound for the secret number.
@@ -22,6 +23,8 @@ public class BeauGame extends NumberGame{
 	
 	@Override
 	public boolean guess(int number){
+		//Everytime user call guess().getGuess will increase 1 at a time;
+		getGuess += 1;
 		if (number == secret) {
     		setMessage("Correct! the answer is"+secret);
     		return true;
@@ -46,5 +49,9 @@ public class BeauGame extends NumberGame{
     public String toString() {
     	return "Guess a secret number between 1 and "+upperBound;
     }
+	@Override
+	public int getCount(){
+		return getGuess;
+	}
 	
 }

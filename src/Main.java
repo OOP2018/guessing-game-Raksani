@@ -10,8 +10,9 @@ public class Main {
 		NumberGame game = new BeauGame(upperBound);
 		GameConsole ui = new GameConsole( );
 		int solution = ui.play( game );
-		//TODO display the answer returned by play
+		//display the answer returned by play
 		System.out.println("play() returned "+solution);
-		//TODO display how many guesses the user made
+		//display how many guesses the user made
+		System.out.println("Tried : "+game.getCount()+" time(s)");
 	}
 }
