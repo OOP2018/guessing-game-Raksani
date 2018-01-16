@@ -22,21 +22,15 @@ public class GameSolver {
 		 * answer.
 		 */
 		int guess;
-		int round=1;
 		System.out.println(game.getMessage());
 		Random rand = new Random();
 		int UpperLimit = game.getUpperBound();
 		int LowerLimit = 1;
-		//guess = rand.nextInt(UpperLimit - LowerLimit + 1) + LowerLimit;
-		guess=UpperLimit/2;
+		// using bisection search.
+		// If we set Upperbound = 100 ,Then "Tried" is less or equal 7 because 2^7 = 128 > 100
+		// So, it can guess number between 1-100 in 7 tries or less.
 		while (true) {
-			if(round==1){
-				guess = UpperLimit/2;
-			}
-			else if(round>1){
-				guess = rand.nextInt(UpperLimit - LowerLimit + 1) + LowerLimit;
-			}
-			
+			guess = (LowerLimit + UpperLimit) / 2;
 			System.out.print("Your answer? ");
 			System.out.println(guess);
 			boolean correct = game.guess(guess);
@@ -47,13 +41,11 @@ public class GameSolver {
 			System.out.println(game.getMessage());
 			if (!correct) {
 				if (game.getMessage().contains("too small")) {
-					LowerLimit = guess + 1;
-					round++;
+					LowerLimit = guess;
 					continue;
 				}
 				if (game.getMessage().contains("too large")) {
-					UpperLimit = guess - 1;
-					round++;
+					UpperLimit = guess;
 					continue;
 				}
 			}
