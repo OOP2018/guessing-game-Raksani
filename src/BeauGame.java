@@ -41,6 +41,8 @@ public class BeauGame extends NumberGame {
 	 * "Your answer is too large." if user guess right number, it shows
 	 * "Correct! the answer is (secret number)" if it is not as above it will
 	 * return false.
+	 * @param number is inputed by user.
+	 * @return true/false depends on conditions above.
 	 **/
 
 	@Override

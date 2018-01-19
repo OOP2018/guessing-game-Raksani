@@ -29,7 +29,7 @@ public class GameSolver {
 		Random rand = new Random();
 		int upperLimit = game.getUpperBound();
 		int lowerLimit = 0;
-		/**
+		/*
 		 * using bisection search. If we set upperBound = 100 ,Then "Tried" is
 		 * less or equal 7 because 2^7 = 128 > 100 So, it can guess number
 		 * between 0-100 in 7 tries or less.
