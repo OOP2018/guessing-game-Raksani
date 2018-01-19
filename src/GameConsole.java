@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * Play guessing game on the console.
- */
+ **/
 public class GameConsole {
 
 	/**
@@ -11,14 +11,14 @@ public class GameConsole {
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		int guess;
-		/*
+		/**
 		 * user guess the secret number (more than 1)
-		 */
+		 **/
 		System.out.println(game.toString());
-		/*
+		/**
 		 * use a loop to print a message from the game and ask the user to input
 		 * answer.
-		 */
+		 **/
 		System.out.println(game.getMessage());
 		while (true) {
 			System.out.print("Your answer? ");
