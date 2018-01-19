@@ -2,6 +2,7 @@ import java.util.Random;// for generating random numbers
 
 /**
  * Automatically find the secret to any NumberGame.
+ * @author Raksani Khunamas
  */
 public class GameSolver {
 	/**
@@ -11,7 +12,7 @@ public class GameSolver {
 	 * solution.
 	 * 
 	 * @param game is the NumberGame to solve guess is ui's guess.
-	 * @return 
+	 * @return guess(secret number)
 	 */
 	public int play(NumberGame game) {
 		// describtion of the game.
@@ -40,11 +41,11 @@ public class GameSolver {
 			System.out.println(game.getMessage());
 			if (!correct) {
 				if (game.getMessage().contains("too small")) {
-					lowerLimit = guess-1;
+					lowerLimit = guess+1;
 					continue;
 				}
 				if (game.getMessage().contains("too large")) {
-					upperLimit = guess+1;
+					upperLimit = guess-1;
 					continue;
 				}
 			}

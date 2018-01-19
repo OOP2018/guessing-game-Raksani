@@ -41,15 +41,18 @@ public class BeauGame extends NumberGame {
 		return false;
 	}
 
+	// return value of upperbound
 	public int getUpperBound() {
 		return upperBound;
 	}
 
+	//return Guess a secret number between 0 and value of upperBound.
 	@Override
 	public String toString() {
 		return "Guess a secret number between 0 and " + upperBound;
 	}
 
+	//return amount of user's try.
 	@Override
 	public int getCount() {
 		return getGuess;
