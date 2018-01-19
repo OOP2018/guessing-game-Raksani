@@ -31,8 +31,8 @@ public class GameSolver {
 		// So, it can guess number between 1-100 in 7 tries or less.
 		while (true) {
 			guess = (LowerLimit + UpperLimit) / 2;
-			System.out.print("Your answer? ");
-			System.out.println(guess);
+//			System.out.print("Your answer? ");
+//			System.out.println(guess);
 			boolean correct = game.guess(guess);
 			if (correct) {
 				System.out.println("You got it!!");
