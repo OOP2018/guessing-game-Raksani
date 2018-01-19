@@ -10,9 +10,8 @@ public class GameSolver {
 	 * guess is too small and "too large" if a guess is too large, for efficient
 	 * solution.
 	 * 
-	 * @param game
-	 *            is the NumberGame to solve guess is ui's guess.
-	 * @return //TODO what does it return?
+	 * @param game is the NumberGame to solve guess is ui's guess.
+	 * @return 
 	 */
 	public int play(NumberGame game) {
 		// describtion of the game.
@@ -24,15 +23,15 @@ public class GameSolver {
 		int guess;
 		System.out.println(game.getMessage());
 		Random rand = new Random();
-		int UpperLimit = game.getUpperBound();
-		int LowerLimit = 0;
+		int upperLimit = game.getUpperBound();
+		int lowerLimit = 0;
 		/*
 		using bisection search.
 		If we set Upperbound = 100 ,Then "Tried" is less or equal 7 because 2^7 = 128 > 100
 		So, it can guess number between 1-100 in 7 tries or less.
 		*/
 		while (true) {
-			guess = (LowerLimit + UpperLimit) / 2;
+			guess = (lowerLimit + upperLimit) / 2;
 			boolean correct = game.guess(guess);
 			if (correct) {
 				System.out.println("You got it!!");
@@ -41,11 +40,11 @@ public class GameSolver {
 			System.out.println(game.getMessage());
 			if (!correct) {
 				if (game.getMessage().contains("too small")) {
-					LowerLimit = guess;
+					lowerLimit = guess-1;
 					continue;
 				}
 				if (game.getMessage().contains("too large")) {
-					UpperLimit = guess;
+					upperLimit = guess+1;
 					continue;
 				}
 			}
