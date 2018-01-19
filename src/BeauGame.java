@@ -17,13 +17,14 @@ public class BeauGame extends NumberGame {
 	/**
 	 * Constructor for a NumberGame with value of upperBound and random
 	 * number(secret number)
+	 * @param upperBound (max value of secret number)
 	 **/
 	public BeauGame(int upperBound) {
-		/**
+		/*
 		 * set the upperbound for the secret number.
 		 **/
 		this.upperBound = upperBound;
-		/**
+		/*
 		 * create a secret number
 		 **/
 		Random rand = new Random();

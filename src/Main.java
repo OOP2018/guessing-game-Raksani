@@ -10,11 +10,11 @@ public class Main {
 		GameConsole ui = new GameConsole();
 		//GameSolver ui = new GameSolver();
 		int solution = ui.play(game);
-		/**
+		/*
 		 *  display the answer returned by play
 		 **/
 		System.out.println("play() returned " + solution);
-		/**
+		/*
 		 *  display how many guesses the user made
 		 **/
 		System.out.println("Tried : " + game.getCount() + " time(s)");

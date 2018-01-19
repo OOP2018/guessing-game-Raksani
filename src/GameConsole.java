@@ -7,18 +7,20 @@ public class GameConsole {
 
 	/**
 	 * play the game. The play method plays a game using input from user.
+	 * @param game an object that extends from NumberGame class.
+	 * @return guess (secret number)
 	 **/
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		int guess;
-		/**
+		/*
 		 * user guess the secret number (more than 1)
-		 **/
+		 */
 		System.out.println(game.toString());
-		/**
+		/*
 		 * use a loop to print a message from the game and ask the user to input
 		 * answer.
-		 **/
+		 */
 		System.out.println(game.getMessage());
 		while (true) {
 			System.out.print("Your answer? ");

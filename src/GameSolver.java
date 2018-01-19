@@ -21,10 +21,10 @@ public class GameSolver {
 	 * @return guess(secret number)
 	 **/
 	public int play(NumberGame game) {
-		/**
+		/*
 		 * use a loop to print a message from the game and ask the user to input
 		 * an answer.
-		 **/
+		 */
 		int guess;
 		Random rand = new Random();
 		int upperLimit = game.getUpperBound();
