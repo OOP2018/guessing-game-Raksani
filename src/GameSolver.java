@@ -25,14 +25,14 @@ public class GameSolver {
 		System.out.println(game.getMessage());
 		Random rand = new Random();
 		int UpperLimit = game.getUpperBound();
-		int LowerLimit = 1;
-		// using bisection search.
-		// If we set Upperbound = 100 ,Then "Tried" is less or equal 7 because 2^7 = 128 > 100
-		// So, it can guess number between 1-100 in 7 tries or less.
+		int LowerLimit = 0;
+		/*
+		using bisection search.
+		If we set Upperbound = 100 ,Then "Tried" is less or equal 7 because 2^7 = 128 > 100
+		So, it can guess number between 1-100 in 7 tries or less.
+		*/
 		while (true) {
 			guess = (LowerLimit + UpperLimit) / 2;
-//			System.out.print("Your answer? ");
-//			System.out.println(guess);
 			boolean correct = game.guess(guess);
 			if (correct) {
 				System.out.println("You got it!!");

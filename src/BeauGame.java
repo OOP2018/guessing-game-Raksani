@@ -47,7 +47,7 @@ public class BeauGame extends NumberGame {
 
 	@Override
 	public String toString() {
-		return "Guess a secret number between 1 and " + upperBound;
+		return "Guess a secret number between 0 and " + upperBound;
 	}
 
 	@Override
