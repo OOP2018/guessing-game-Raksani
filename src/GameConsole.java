@@ -5,12 +5,15 @@ import java.util.Scanner;
  */
 public class GameConsole {
 
-	/** play the game. */
-	// The play method plays a game using input from user.
+	/**
+	 * play the game. The play method plays a game using input from user.
+	 **/
 	public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		int guess;
-		// user guess the secret number (more than 1)
+		/*
+		 * user guess the secret number (more than 1)
+		 */
 		System.out.println(game.toString());
 		/*
 		 * use a loop to print a message from the game and ask the user to input

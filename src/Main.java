@@ -7,11 +7,16 @@ public class Main {
 		// upper limit for secret number in guessing game
 		int upperBound = 100;
 		NumberGame game = new BeauGame(upperBound);
-		GameSolver ui = new GameSolver();
+		GameConsole ui = new GameConsole();
+		//GameSolver ui = new GameSolver();
 		int solution = ui.play(game);
-		// display the answer returned by play
+		/*
+		 *  display the answer returned by play
+		 */
 		System.out.println("play() returned " + solution);
-		// display how many guesses the user made
+		/*
+		 *  display how many guesses the user made
+		 */
 		System.out.println("Tried : " + game.getCount() + " time(s)");
 	}
 }
