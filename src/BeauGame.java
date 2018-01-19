@@ -64,6 +64,7 @@ public class BeauGame extends NumberGame {
 	}
 
 	/**
+	 * get the value of upperBound.
 	 * @return value of upperBound.
 	 **/
 	public int getUpperBound() {
@@ -71,6 +72,7 @@ public class BeauGame extends NumberGame {
 	}
 
 	/**
+	 * Print description of a game.
 	 * @return "Guess a secret number between 0 and value of upperBound."
 	 **/
 
@@ -80,6 +82,7 @@ public class BeauGame extends NumberGame {
 	}
 
 	/**
+	 * Get the counting guesses.
 	 * @return amount of user's try.
 	 **/
 	@Override
