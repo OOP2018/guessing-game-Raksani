@@ -93,3 +93,4 @@ public class BeauGame extends NumberGame {
 	}
 
 }
+//edit

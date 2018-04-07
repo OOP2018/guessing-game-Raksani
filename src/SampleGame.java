@@ -67,3 +67,4 @@ public class SampleGame extends NumberGame {
 		return "Convert a number from hexadecimal to decimal.";
 	}
 }
+//edit
