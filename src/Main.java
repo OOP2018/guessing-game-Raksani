@@ -12,40 +12,52 @@ import java.net.URL;
  * connecting objects, and running the game UI.
  **/
 public class Main extends Application {
-//	public static void main(String[] args) {
-//		// upper limit for secret number in guessing game
-//		int upperBound = 100;
-//		NumberGame game = new BeauGame(upperBound);
-//		GameConsole ui = new GameConsole();
-//		//GameSolver ui = new GameSolver();
-//		int solution = ui.play(game);
-//		/*
-//		 *  display the answer returned by play
-//		 **/
-//		System.out.println("play() returned " + solution);
-//		/*
-//		 *  display how many guesses the user made
-//		 **/
-//		System.out.println("Tried : " + game.getCount() + " time(s)");
-//	}
-@Override
-public void start(Stage stage) {
-	try {
-		Parent root = (Parent) FXMLLoader.load(
-				getClass().getResource("GuessingGameUI.fxml"));
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.sizeToScene();
-		stage.show();
-	} catch (Exception e) {
-		System.out.println("Exception creating scene: " + e.getMessage());
-	}
-}
 
+	@Override
+	public void start(Stage primaryStage) {
+		// Create the Counter object (the "model" part of our app)
+		Counter counter = new Counter();
+		try {
+			URL url = getClass().getResource("src/GuessingGameUI.fxml");
+			if (url == null) {
+				System.out.println("Couldn't find file: GuessingGameUI.fxml");
+				Platform.exit();
+			}
+			// Load the FXML and get reference to the loader
+			FXMLLoader loader = new FXMLLoader(url);
+			// Create the UI. This will instantiate the controller object, too.
+			Parent root = loader.load();
+			// Now we can get the controller object from the FXMLloader.
+			// This is interesting -- we don't need to use a cast!
+			GuessController controller = loader.getController();
+
+			controller.setSecret(100);
+			// Dependency Injection:
+			// Set the Counter object we want the view to update.
+			controller.setCount(counter);
+
+			// Build and show the scene
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.sizeToScene();
+			primaryStage.setTitle("Click Counter");
+			primaryStage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+			return;
+		}
+
+		// Add an observer that displays the Counter value on console.
+		// Dependency Injection:
+		// We set a reference to the counter using the constructor.
+		CounterView view2 = new CounterView(counter);
+		counter.addObserver(view2);
+		view2.run();
+	}
 	/**
 	 * start the application.
 	 *
-	 * @param args
+ * @param args
 	 */
 	public static void main(String[] args) {
 
