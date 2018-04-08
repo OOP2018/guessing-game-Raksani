@@ -18,7 +18,7 @@ public class Main extends Application {
 		// Create the Counter object (the "model" part of our app)
 		Counter counter = new Counter();
 		try {
-			URL url = getClass().getResource("src/GuessingGameUI.fxml");
+			URL url = getClass().getResource("GuessingGameUI.fxml");
 			if (url == null) {
 				System.out.println("Couldn't find file: GuessingGameUI.fxml");
 				Platform.exit();
@@ -50,9 +50,12 @@ public class Main extends Application {
 		// Add an observer that displays the Counter value on console.
 		// Dependency Injection:
 		// We set a reference to the counter using the constructor.
-		CounterView view2 = new CounterView(counter);
-		counter.addObserver(view2);
-		view2.run();
+		FailView failView = new FailView(counter);
+		counter.addObserver(failView);
+		CounterView counterView = new CounterView(counter);
+		counter.addObserver(counterView);
+		counterView.run();
+		failView.run();
 	}
 	/**
 	 * start the application.
@@ -60,7 +63,6 @@ public class Main extends Application {
  * @param args
 	 */
 	public static void main(String[] args) {
-
 		Application.launch(args);
 	}
 }

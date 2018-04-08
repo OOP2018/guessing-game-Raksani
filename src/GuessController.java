@@ -36,23 +36,30 @@ public class GuessController {
 
     @FXML
     public void guess(ActionEvent actionEvent) {
-        String guess = textfield1.getText();
-        if(Integer.parseInt(guess) > secret){
-            message = guess + " is way too large!";
-            label.setText(message);
-            count.add(1);
+        String guess = "";
+        try {
+            guess = textfield1.getText();
+            if(Integer.parseInt(guess) > secret){
+                message = guess + " is way too large!";
+                label.setText(message);
+                count.add(1);
 
+            }
+            else if(Integer.parseInt(guess) < secret){
+                message = guess + " is too small!";
+                label.setText(message);
+                count.add(1);
+            }
+            else{
+                message = "Correct!";
+                resetSecret();
+                label.setText(message);
+            }
+        }catch (Exception exceptionn){
+            message = "Please input value";
         }
-        else if(Integer.parseInt(guess) < secret){
-            message = guess + " is too small!";
-            label.setText(message);
-            count.add(1);
-        }
-        else{
-            message = "Correct!";
-            resetSecret();
-            label.setText(message);
-        }
+        count.setMsg(message);
+        count.newSet();
     }
 
     @FXML
@@ -61,6 +68,9 @@ public class GuessController {
         label.setText("");
         textfield1.setText("");
         textfield1.setPromptText("Enter secret number");
+        count.resetCount();
+        count.resetMsg();
+        count.newSet();
     }
 
     @FXML
@@ -68,7 +78,6 @@ public class GuessController {
         System.out.println("hi");
         label.setText("The secret number is "+secret);
     }
-
 
     public void setCount(Counter count) {
         this.count = count;
